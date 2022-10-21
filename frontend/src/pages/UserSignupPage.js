@@ -28,29 +28,8 @@ class UserSignupPage extends React.Component{
 
     };
 
-    // onChangeUsername = event =>  {
-    //     this.setState({
-    //         username:event.target.value
-    //     });
-    //  }
+    
 
-    //  onChangeDisplayName = event =>  {
-    //     this.setState({
-    //         displayName:event.target.value
-    //     });
-    //  }
-
-    //  onChangePassword = event =>  {
-    //     this.setState({
-    //         password:event.target.value
-    //     });
-    //  }
-
-    //  onChangePasswordRepeat = event =>  {
-    //     this.setState({
-    //         passwordRepeat:event.target.value
-    //     });
-    //  }
     onClickSignup = async event => {
         event.preventDefault();
         const{username,displayName,password} = this.state;
@@ -73,37 +52,26 @@ class UserSignupPage extends React.Component{
         this.setState({pendingApiCall: false})
     };
 
-    //    signup(body)
-    //     .then((response)=>{
-    //         this.setState({
-    //             pendingApiCall:false
-    //         })
 
-
-    //     }).catch(error => {
-    //         this.setState({pendingApiCall: false})
-    //     })
     
 
     
 
     render(){
         const { pendingApiCall, errors} = this.state;
-        const { username,displayName} = errors;
+        const { username,displayName,password} = errors;
         return (
             <div className = "container">
                 <form>
                  <h1 className = "text-center">SignUp</h1>
                  <Input name="username" label="Username" error={username} onChange={this.onChange}></Input>
                  <Input name="displayName" label="Display Name" error={displayName} onChange={this.onChange}></Input>
+                 <Input name="password" label="Password" error={password} onChange={this.onChange} type="password"></Input>
 
-                
+        
                  
                  
-                <div className="form-group">
-                 <label>Password </label>
-                 <input  className="form-control" name ="password" onChange={this.onChange} type="password"/>
-                 </div>
+             
                  <div className="form-group">
                  <label>Password Repeat </label>
                  <input  className="form-control" name ="passwordRepeat" onChange={this.onChange} type="password"/>
