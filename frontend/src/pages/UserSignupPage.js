@@ -83,7 +83,7 @@ class UserSignupPage extends React.Component{
                  <div className='text-center'>
                  <button className='btn btn-primary' 
                  onClick={this.onClickSignup}
-                 disabled={pendingApiCall}
+                 disabled={pendingApiCall || passwordRepeat !== undefined}
                  >Sign up
                  {pendingApiCall &&  <span className="spinner-border spinner-border-sm"></span>};
                  
