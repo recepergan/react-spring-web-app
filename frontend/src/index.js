@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './bootstrap-override.scss';
+import './i18n';
 
 import UserSignupPage from './pages/UserSignupPage';
 import reportWebVitals from './reportWebVitals';
